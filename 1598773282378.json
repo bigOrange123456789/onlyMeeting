@@ -1,0 +1,311 @@
+{
+	"settings": {
+		"physics": {
+			"gravity": [
+				0,
+				-0.98,
+				0
+			]
+		},
+		"render": {
+			"post_process": {
+				"overrides": {
+					"Bloom": {
+						"enabled": false,
+						"strength": 0.5,
+						"kernelSize": 5,
+						"sigma": 0.5,
+						"resolution": 512
+					},
+					"AmbientOcclusion": {
+						"enabled": false,
+						"kernelRadius": 4,
+						"kernelSize": 4,
+						"minDistance": 0.001,
+						"maxDistance": 0.005
+					},
+					"Highlights": {
+						"enabled": false,
+						"shadows": [
+							255,
+							255,
+							255,
+							177.5
+						],
+						"midtones": [
+							255,
+							255,
+							255,
+							177.5
+						],
+						"highlights": [
+							255,
+							255,
+							255,
+							177.5
+						],
+						"shadows_pos": [
+							97,
+							121,
+							100
+						],
+						"midtones_pos": [
+							97,
+							121,
+							100
+						],
+						"highlights_pos": [
+							97,
+							121,
+							100
+						],
+						"amount": 1
+					},
+					"Vignette": {
+						"enabled": false,
+						"offset": 0.8,
+						"darkness": 0.8
+					},
+					"ToneMapping": {
+						"enabled": false,
+						"exposure": 1000,
+						"whitePoint": 1
+					},
+					"Gasmma": {
+						"enabled": false,
+						"brightness": 0,
+						"contrast": 1,
+						"gamma": 1,
+						"coeffs": [
+							0.5,
+							0.5,
+							0.5
+						]
+					},
+					"Saturation": {
+						"enabled": false,
+						"hue": 0,
+						"saturation": 1,
+						"value": 1
+					},
+					"Exposure": {
+						"enabled": false,
+						"adaptive": true
+					}
+				},
+				"enabled": false
+			},
+			"fog_end": 1000,
+			"fog_start": 1,
+			"global_ambient": [
+				1,
+				1,
+				1
+			],
+			"ambientLightIntensity": 0.5,
+			"fog_color": [
+				0,
+				0,
+				0
+			],
+			"fog": "none",
+			"fog_density": 0.01,
+			"gamma_correction": 1,
+			"tonemapping": 0,
+			"exposure": 0.5,
+			"skybox_color": [
+				1,
+				1,
+				1
+			],
+			"skyboxIntensity": 0.196,
+			"skyboxMip": 0,
+			"lightmap": [],
+			"lightmapSizeMultiplier": 16,
+			"lightmapMaxResolution": 2048,
+			"lightmapMode": 1,
+			"toneMappingExposure": 0.1,
+			"lightmapUV2": {}
+		}
+	},
+	"id": 1598773282378,
+	"scene": 1598773282378,
+	"item_id": 1598773282378,
+	"project_id": 1598773282375,
+	"branch_id": "",
+	"checkpoint_id": "",
+	"name": "newScene",
+	"uniqueId": 1598773282378,
+	"_id": "5f4b5822047e0f14840f6e93",
+	"entities": {
+		"a1372f8d-1c83-42ce-86f4-3f95cd9a9e8b": {
+			"components": {
+				"transform": {
+					"scale": [
+						1,
+						1,
+						1
+					],
+					"position": [
+						0,
+						0,
+						0
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				},
+				"script": {
+					"enabled": true,
+					"order": [
+						"sceneSet"
+					],
+					"scripts": {
+						"sceneSet": {
+							"enabled": true,
+							"attributes": {
+								"female": 1,
+								"hosttalk": 2,
+								"zhengtalk": 222,
+								"zhaotalk": 22222,
+								"femalelow": 14,
+								"grand": 4,
+								"grandlow": 13,
+								"grany": 7,
+								"granylow": 16,
+								"male": 10,
+								"malelow": 15,
+								"chair": 1599460236849
+							}
+						}
+					}
+				}
+			},
+			"name": "Root",
+			"parent": null,
+			"resource_id": "a1372f8d-1c83-42ce-86f4-3f95cd9a9e8b",
+			"tags": [],
+			"layers": [
+				0
+			],
+			"enabled": true,
+			"children": [
+				"fe1345d3-aafb-46df-a7fd-5c73ff44ab09",
+				"111753c0-7463-49e3-a04a-e38566136f59",
+				"1526e17c-8d4a-405d-bb69-1a3485c2debf"
+			]
+		},
+		"e72afa85-9415-4f32-a785-efbd67630ec5": {
+			"name": "相机",
+			"tags": [],
+			"enabled": true,
+			"resource_id": "e72afa85-9415-4f32-a785-efbd67630ec5",
+			"parent": "111753c0-7463-49e3-a04a-e38566136f59",
+			"children": [],
+			"layers": [
+				0
+			],
+			"components": {
+				"Camera": {
+					"enabled": true,
+					"cullingMask": [
+						1,
+						1,
+						1,
+						1
+					],
+					"Projection": "Perspective",
+					"field_of_view": 45,
+					"frustumSize": 0,
+					"nearClipPlane": 0.3,
+					"farClipPlane": 1000,
+					"aspect": 2,
+					"targetTexture": null
+				},
+				"transform": {
+					"position": [
+						-1.5987211554602254e-14,
+						0.8646800796580016,
+						-0.0006557538332234714
+					],
+					"rotation": [
+						0,
+						180,
+						0
+					],
+					"scale": [
+						1,
+						1,
+						1
+					]
+				}
+			},
+			"position": [
+				14.736212689658354,
+				2.0777135621828746,
+				-3.1507803186756917
+			],
+			"scale": [
+				1,
+				1,
+				1
+			],
+			"rotation": [
+				0,
+				-90,
+				0
+			]
+		},
+		"111753c0-7463-49e3-a04a-e38566136f59": {
+			"name": "Player",
+			"tags": [],
+			"enabled": true,
+			"resource_id": "111753c0-7463-49e3-a04a-e38566136f59",
+			"parent": "a1372f8d-1c83-42ce-86f4-3f95cd9a9e8b",
+			"children": [
+				"e72afa85-9415-4f32-a785-efbd67630ec5"
+			],
+			"layers": [
+				0
+			],
+			"components": {
+				"transform": {
+					"position": [
+						13.706535117810215,
+						0,
+						-10.088824955573328
+					],
+					"rotation": [
+						0,
+						-90,
+						0
+					],
+					"scale": [
+						1,
+						1,
+						1
+					]
+				},
+				"script": {
+					"enabled": true,
+					"order": [
+						"playerControl"
+					],
+					"scripts": {
+						"playerControl": {
+							"enabled": true,
+							"attributes": {
+								"directionY_Ref": "e72afa85-9415-4f32-a785-efbd67630ec5",
+								"speed": 10
+							}
+						}
+					}
+				}
+			}
+		}
+},
+	"created": "2020-08-30T07:41:22.379Z",
+	"modified": "2020-09-08T01:55:07.010Z"
+}

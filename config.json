@@ -1,0 +1,349 @@
+{
+	"application_properties": {
+		"antiAlias": true,
+		"fillMode": "FILL_WINDOW",
+		"resolutionMode": "AUTO",
+		"height": 720,
+		"width": 1280,
+		"use3dPhysics": true,
+		"preferWebGl2": true,
+		"preserveDrawingBuffer": false,
+		"scripts": [],
+		"transparentCanvas": false,
+		"useDevicePixelRatio": true,
+		"useLegacyScripts": false,
+		"vr": false,
+		"loadingScreenScript": null,
+		"layerOrder": [
+			{
+				"layer": 0,
+				"transparent": false,
+				"enabled": true
+			},
+			{
+				"layer": 1,
+				"transparent": false,
+				"enabled": true
+			},
+			{
+				"layer": 2,
+				"transparent": false,
+				"enabled": true
+			},
+			{
+				"layer": 0,
+				"transparent": true,
+				"enabled": true
+			},
+			{
+				"layer": 3,
+				"transparent": false,
+				"enabled": true
+			},
+			{
+				"layer": 3,
+				"transparent": true,
+				"enabled": true
+			},
+			{
+				"layer": 4,
+				"transparent": true,
+				"enabled": true
+			}
+		],
+		"item_id": 1598773282375,
+		"project": 1598773282375,
+		"name": "project",
+		"useKeyboard": true,
+		"useMouse": true,
+		"useTouch": true,
+		"useGamepads": false,
+		"i18nAssets": [],
+		"layers": {
+			"0": {
+				"name": "Default",
+				"opaqueSortMode": 2,
+				"transparentSortMode": 3
+			},
+			"1": {
+				"name": "TransparentFX",
+				"opaqueSortMode": 2,
+				"transparentSortMode": 3
+			},
+			"2": {
+				"name": "Ignore Raycast",
+				"opaqueSortMode": 0,
+				"transparentSortMode": 3
+			},
+			"3": {
+				"name": "3",
+				"opaqueSortMode": 0,
+				"transparentSortMode": 3
+			},
+			"4": {
+				"name": "Water",
+				"opaqueSortMode": 1,
+				"transparentSortMode": 1
+			},
+			"5": {
+				"name": "UI",
+				"opaqueSortMode": 2,
+				"transparentSortMode": 3
+			},
+			"6": {
+				"name": "6",
+				"opaqueSortMode": 2,
+				"transparentSortMode": 3
+			},
+			"7": {
+				"name": "7",
+				"opaqueSortMode": 2,
+				"transparentSortMode": 3
+			}
+		}
+	},
+	"scenes": [
+		{
+			"name": "newScene",
+			"url": "1598773282378.json"
+		}
+	],
+	"assets": {
+		"1599460236849": {
+			"id": 1599460236849,
+			"name": "Chair825.glb",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": {
+				"meshes": 1,
+				"meshInstances": 0,
+				"nodes": 1,
+				"skins": 0,
+				"vertices": 1136,
+				"triangles": 1532,
+				"attributes": {
+					"position": 2,
+					"normal": 2,
+					"texCoord0": 2,
+					"color": 1,
+					"texCoord1": 1
+				}
+			},
+			"data": {
+				"mapping": [],
+				"area": 0
+			},
+			"type": "model",
+			"file": {
+				"hash": null,
+				"filename": "Chair825.glb",
+				"size": 811576,
+				"path": "files/1598773282375/assets/1599460236849/Chair825.glb"
+			},
+			"region": ""
+		},
+		"22222": {
+			"id": 22222,
+			"name": "zhaotalk.glb",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": {
+				"meshes": 1,
+				"meshInstances": 0,
+				"nodes": 1,
+				"skins": 0,
+				"vertices": 1136,
+				"triangles": 1532,
+				"attributes": {
+					"position": 2,
+					"normal": 2,
+					"texCoord0": 2,
+					"color": 1,
+					"texCoord1": 1
+				}
+			},
+			"data": {
+				"mapping": [],
+				"area": 0
+			},
+			"type": "model",
+			"file": {
+				"hash": null,
+				"filename": "zhaotalk.glb",
+				"size": 111472,
+				"path": "files/1598773282375/assets/22222/zhaotalk.glb"
+			},
+			"region": ""
+		},
+		"222": {
+			"id": 222,
+			"name": "zhengtalk.glb",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": {
+				"meshes": 1,
+				"meshInstances": 0,
+				"nodes": 1,
+				"skins": 0,
+				"vertices": 1136,
+				"triangles": 1532,
+				"attributes": {
+					"position": 2,
+					"normal": 2,
+					"texCoord0": 2,
+					"color": 1,
+					"texCoord1": 1
+				}
+			},
+			"data": {
+				"mapping": [],
+				"area": 0
+			},
+			"type": "model",
+			"file": {
+				"hash": null,
+				"filename": "zhengtalk.glb",
+				"size": 73612,
+				"path": "files/1598773282375/assets/222/zhengtalk.glb"
+			},
+			"region": ""
+		},
+		"2": {
+			"id": 2,
+			"name": "hosttalk.glb",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": {
+				"meshes": 1,
+				"meshInstances": 0,
+				"nodes": 1,
+				"skins": 0,
+				"vertices": 1136,
+				"triangles": 1532,
+				"attributes": {
+					"position": 2,
+					"normal": 2,
+					"texCoord0": 2,
+					"color": 1,
+					"texCoord1": 1
+				}
+			},
+			"data": {
+				"mapping": [],
+				"area": 0
+			},
+			"type": "model",
+			"file": {
+				"hash": null,
+				"filename": "hosttalk.glb",
+				"size": 205948,
+				"path": "files/1598773282375/assets/2/hosttalk.glb"
+			},
+			"region": ""
+		},
+		"1599472648593": {
+			"id": 1599472648593,
+			"name": "sceneSet.js",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": null,
+			"data": {
+				"order": 100,
+				"scripts": {
+					"sceneSet": {
+						"attributesOrder": [
+							"hosttalk",
+							"zhengtalk",
+							"zhaotalk",
+							"chair",
+							"dsz",
+							"zys"
+						],
+						"attributes": {
+							"hosttalk": {
+								"title": "hosttalk",
+								"type": "asset"
+							},
+							"zhengtalk": {
+								"title": "zhengtalk",
+								"type": "asset"
+							},
+							"zhaotalk": {
+								"title": "zhaotalk",
+								"type": "asset"
+							},
+							"chair": {
+								"title": "chair",
+								"type":"asset"
+							},
+							"dsz": {
+								"title": "dsz",
+								"type": "entity",
+								"description": "dsz"
+							},
+							"zys": {
+								"title": "zys",
+								"type": "entity",
+								"description": "zys"
+							}
+						}
+					}
+				},
+				"loading": false
+			},
+			"type": "script",
+			"file": {
+				"filename": "sceneSet.js",
+				"size": 1263,
+				"hash": "89fa9720f0f011ea8a1aa9aeb00d6738",
+				"path": "files/sceneSet.js"
+			},
+			"region": ""
+		},
+		"1599475603582": {
+			"id": 1599475603582,
+			"name": "playerControl.js",
+			"revision": null,
+			"tags": [],
+			"preload": true,
+			"meta": null,
+			"data": {
+				"order": 100,
+				"scripts": {
+					"playerControl": {
+						"attributesOrder": [
+							"directionY_Ref",
+							"speed"
+						],
+						"attributes": {
+							"directionY_Ref": {
+								"title": "directionY_Ref",
+								"type": "entity",
+								"description": "directionY_Ref"
+							},
+							"speed": {
+								"title": "speed",
+								"type": "number",
+								"default": 10
+							}
+						}
+					}
+				},
+				"loading": false
+			},
+			"type": "script",
+			"file": {
+				"filename": "playerControl.js",
+				"size": 1283,
+				"hash": "6b4a20f0f0f711ea8a1aa9aeb00d6738",
+				"path": "files/playerControl.js"
+			},
+			"region": ""
+		}
+	}
+}

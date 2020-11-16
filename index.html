@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        #video{ position:absolute;width:0px;height:0px;}
+        body{
+            overflow:scroll;overflow-x:hidden;overflow-y:hidden;
+            margin:0px;
+        }
+    </style>
+    <title>StartWebVRConference</title>
+    <script>
+        CONFIG_PATH = "config.json";
+    </script>
+</head>
+<body oncontextmenu="doNothing()">
+<script src="build/three.js"></script>
+<!--PM依赖开始-->
+<script src="pmLib/MyPMLoader.js"></script>
+<script src="pmLib/PMAnimLoader.js"></script>
+<!--PM依赖完成-->
+
+    <script src="files/roomSet/SpriteCard.js"></script>
+    <script src="files/roomSet/LightManager.js"></script>
+    <script src="files/roomSet/Word3DManager.js"></script>
+    <script src="files/roomSet/ChairManager.js"></script>
+    <script src="files/roomSet/AvatarManager.js"></script>
+    <script src="files/roomSet/RoomManager.js"></script>
+
+    <script src="files/ParameMeasure.js"></script>
+
+    <!-- 引擎依赖-->
+    <script src="build/three.js"></script>
+    <script src="build/stats.min.js"></script>
+    <script src="./libs/js/libs/inflate.min.js"></script>
+    <script src="libs/js/loader/RGBELoader.js"></script>
+    <script src="./libs/js/loader/EXRLoader.js"></script>
+
+    <script src="./libs/js/postprocessing/EffectComposer.js"></script>
+    <script src="./libs/js/postprocessing/MaskPass.js"></script>
+    <script src="./libs/js/postprocessing/RenderPass.js"></script>
+    <script src="./libs/js/postprocessing/ShaderPass.js"></script>
+    <script src="./libs/js/postprocessing/UnrealBloomPass.js"></script>
+    <script src="./libs/threejs104/js/postprocessing/SSAOPass.js"></script>
+    <script src="./libs/threejs104/js/postprocessing/AdaptiveToneMappingPass.js"></script>
+
+    <script src="./libs/js/shaders/CopyShader.js"></script>
+    <script src="./libs/js/shaders/LuminosityHighPassShader.js"></script>
+    <script src="./libs/threejs104/js/shaders/SSAOShader.js"></script>
+    <script src="./libs/threejs104/js/shaders/VignetteShader.js"></script>
+    <script src="./libs/threejs104/js/shaders/ToneMapShader.js"></script>
+    <script src="./libs/threejs104/js/shaders/LuminosityShader.js"></script>
+
+    <script src="./libs/threejs104/js/SimplexNoise.js"></script>
+
+    <script src="build/ammo.js"></script>
+    <script src="build/Web3DEngine.js"></script>
+    <script src="build/W3DJsonConverter.js"></script>
+    <script src="start.js"></script>
+
+    <audio id="hostAudio" src="files/audio/hostaudio.mp3"></audio>
+    <audio id="zys" src="files/audio/zys.mp3"></audio>
+    <audio id="dongsz" src="files/audio/dsz.mp3"></audio>
+	<script>
+        var assetServer = location.origin;
+        function doNothing(){
+            window.event.returnValue=false;
+            return false;
+        }
+    </script>
+
+</body>
+</html>
