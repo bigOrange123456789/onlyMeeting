@@ -85,8 +85,13 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
             obj._imp.add(myModel2);
             obj.transform.localScale=new THREE.Vector3(1,1,1);
             obj.transform.position=new THREE.Vector3(0,0,0);
+
             var obj2=Web3DEngine.GameObject.Instantiate(obj);//0000
-            obj2.transform.position=new THREE.Vector3(0.5,0,0);
+            obj2.getComponent(Web3DEngine.Transform).localPosition=new THREE.Vector3(0.5,0,0);
+
+            var obj3=Web3DEngine.GameObject.Instantiate(obj);//0000
+            obj3.getComponent(Web3DEngine.Transform).localPosition=new THREE.Vector3(1,0,0);
+
             console.log(obj2);
             //console.log(myModel2.child[0]);
             //完成新的PM
