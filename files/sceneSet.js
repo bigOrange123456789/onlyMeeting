@@ -48,21 +48,8 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
         updateWindowSize();
 	    if(this.f==1){
             myRoomManager.loadRoom();
-            //开始LOD
-            /*var lod = new THREE.LOD();
-            for( var i = 0; i < 3; i++ ) {
-                var geometry= new THREE.IcosahedronBufferGeometry( 10,i);//(3 - i)/10
-                var material= new THREE.MeshPhongMaterial({color: 0xffffff});//new THREE.MeshPhongMaterial({color:0xffffff});//=new THREE.MeshBasicMaterial({color:0xffffff, transparent: true,opacity: 0.5 });//new THREE.MeshPhongMaterial({color:0xffffff});
-                var mesh = new THREE.Mesh( geometry, material );
-                lod.addLevel( mesh,i/100);
-            }//lod.position.set(5.5,-5,-1.6);lod.scale.set(1,1,1);
-            appInst._renderScenePass.scene.add( lod );
-            //完成LOD
-*/
             ///开始PM
-            //开始创建PM对象
             var camera=appInst._renderScenePass.camera;
-            console.log(camera);
             var LODArray=[70]//1个数字表示距离，可以将模型分为1级;
             var pmLoader = new MyPMLoader(
                 '/myModel/dongshizhang5', //模型路径
@@ -73,7 +60,6 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
             );//pmLoader = new myPMLoader('myModel/dongshizhang', LODNumber);//pmLoader = new THREE.PMLoader();//加载PM文件
             var myModel=pmLoader.obj;
 
-            //出现BUG的原因是，将第一个mesh添加到了第二个对象当中
             var pmLoader2 = new MyPMLoader(
                 '/myModel/zhao1', //模型路径
                 LODArray,//LOD等级的数组
@@ -81,18 +67,28 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
                 0,//有多个动画时,表示第0个动画//可以通过pmLoader.updateAnimation(i)来切换动画
                 0.2//动画播放速度//可以通过调整pmLoader.animationSpeed来调整速度
             );//pmLoader = new myPMLoader('myModel/dongshizhang', LODNumber);//pmLoader = new THREE.PMLoader();//加载PM文件
-            var myModel2=pmLoader2.obj;/**/
-            //完成创建PM对象
+            var myModel2=pmLoader2.obj;
+
             myModel.rotation.set(0,-Math.PI/2,0);
             myModel.scale.set(0.105,0.105,0.105);
             myModel.position.set(19,0.9,-1.8);//x是前后，z是左右//rootObject.rotation.set();
-            appInst._renderScenePass.scene.add(myModel);
-            new ParamMeasure(myModel,0);/**/
+            appInst._renderScenePass.scene.add(myModel);//new ParamMeasure(myModel,0);/**/
 
             myModel2.rotation.set(0,-Math.PI/2,0);
             myModel2.scale.set(0.105,0.105,0.105);
             myModel2.position.set(19,0.9,-0.6 );//x是前后，z是左右//rootObject.rotation.set();
             appInst._renderScenePass.scene.add(myModel2);
+            //console.log(new Web3DEngine.GameObject());
+
+            var obj=new Web3DEngine.GameObject();
+            console.log(myModel2);//.children
+            obj._imp.add(myModel2);
+            obj.transform.localScale=new THREE.Vector3(1,1,1);
+            obj.transform.position=new THREE.Vector3(0,0,0);
+            var obj2=Web3DEngine.GameObject.Instantiate(obj);//0000
+            obj2.transform.position=new THREE.Vector3(0.5,0,0);
+            console.log(obj2);
+            //console.log(myModel2.child[0]);
             //完成新的PM
         }else if(this.f==3){
             //椅子摆放
@@ -123,13 +119,19 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
                         newChair.getComponent(Web3DEngine.Transform).localPosition.set(-1.6-0.9*i,8.95+i*0.5,8.5-0.4*j-k*7.6);//前后、上下、左右
                         chairSave.push(newChair);
                     }
+            /*chairSave[1].getComponent(Web3DEngine.Transform).localScale
+            =new THREE.Vector3(0.1,0.5,0.1);
+            chairSave[0].getComponent(Web3DEngine.Transform).localPosition
+                =new THREE.Vector3(0,0,0);
+                //这里用到的应该不是真正的实例化渲染技术
+                */
+            console.log(chairSave[1].getComponent(Web3DEngine.Transform).localScale);
             //==========================================
-
             //==============添加人物================
-            for(var i=0;i<chairSave.length;i++)myAvatarManager.avatarType.push(randomNum(1,4));
+            for(var i=0;i<chairSave.length/10;i++)myAvatarManager.avatarType.push(randomNum(1,4));
             //====================================
         }else if(this.f==70) myAvatarManager.loadAvatar();
-	    else if(this.f==180)myAvatarManager.loadAvatar2();
+	    //else if(this.f==180)myAvatarManager.loadAvatar2();
 	    if(this.f<182)this.f++;
     },
     LateUpdate:function(arg){

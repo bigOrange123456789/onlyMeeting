@@ -598,7 +598,7 @@ function MyPMLoader(url,LODArray,camera,animationType,animationSpeed){
                 {
                     //THIS.hadLoadAllMesh=true;
                     //开始测试
-                    document.onkeydown = function(e){
+                    /*document.onkeydown = function(e){
                         if (e.key == "N"||e.key == "n") {
                             console.log(THIS.rootObject,THIS.skeletonBones);
                             var i=prompt("请输入1-"+(pmMeshHistory.length)+"的数字来切换LOD:",0);
@@ -609,10 +609,10 @@ function MyPMLoader(url,LODArray,camera,animationType,animationSpeed){
                             var i=prompt("请输入1-"+(THIS.rootObject.animations.length)+"的数字来切换动画:",0);
                             THIS.updateAnimation(i-1);
                         }
-                    }
+                    }*/
                     //完成测试//if (isPmLoading == false) restoreMesh();
                     function loopLODCheck(){
-                        if(Math.random()<0.01)THIS.updateAnimation(Math.floor(Math.random()*4));
+                        //if(Math.random()<0.01)THIS.updateAnimation(Math.floor(Math.random()*4));
                         requestAnimationFrame(loopLODCheck);
                         THIS.LODCheck(THIS.camera,THIS.skeletonBones,THIS.skeletonMatrix);
                     }loopLODCheck();/**/

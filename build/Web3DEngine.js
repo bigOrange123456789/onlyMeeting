@@ -553,11 +553,11 @@
 	        this.infoRef = typeRef;
 	    },
 
-	    _copy:function(source){
+	    _copy:function(source){//这里可能不是进行实例化渲染的代码，执行次数太少了//console.log(source);
 	        this.infoRef = source.infoRef;
 	        for(let item in source.index)
 	        {
-	            this.index[item] = source.index[item];
+	            this.index[item]=source.index[item];
 	        }
 	    }
 	});
@@ -9550,13 +9550,10 @@
 	                // //设置模型材质
 	                // this._materialNodes = this._getMaterialNodes(this._gltfScene._imp);
 	                // this._setExternalMaterials(this._materialNodes, this._mesh._externalMaterials);
-
 	            }
-
 	            this.gameObject.dispatchEvent({type:Event$1.CHANGEMESH});
 	        }
 	    });
-
 	    this.addEventListener(Event$1.DESTROY, this, this._handleDestroy);
 	}
 
@@ -9834,14 +9831,10 @@
 	        let bones = skeleton.bones;
 
 	        for ( var i = 0, il = iks.length; i < il; i ++ ) {
-
 	            var ik = iks[ i ];
 	            var links = ik.links;
-
 	            for ( var j = 0, jl = links.length; j < jl; j ++ ) {
-
 	                var link = links[ j ];
-
 	                if ( physicsEnabled === true ) {
 	                    // disable IK of the bone the corresponding rigidBody type of which is 1 or 2
 	                    // because its rotation will be overriden by physics
@@ -9850,9 +9843,7 @@
 	                    link.enabled = true;
 	                }
 	            }
-
 	        }
-
 	    },
 
 	    //设置MMD骨骼旋转付与

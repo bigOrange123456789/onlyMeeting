@@ -7,7 +7,7 @@
     /*——引擎初始化——*/
     initW3D();
     function initW3D() {
-        console.log('initW3D');mytimeinitW3D=new Date();
+        //console.log('initW3D');mytimeinitW3D=new Date();
         appInst = Web3DEngine.Application.CreateApplication();
         appInst.CreateRenderRes();
         appInst.setRenderSize(window.innerWidth, window.innerHeight);
@@ -24,43 +24,43 @@
                 loadAssetsList(configData.assets);
             //}, 0 );
         });
-        console.log('initW3D',new Date()-mytimeinitW3D);
+        //console.log('initW3D',new Date()-mytimeinitW3D);
     }
 
     function loadConfig(callback){
-        console.log('loadConfig');mytimeloadConfig=new Date();
+        //console.log('loadConfig');mytimeloadConfig=new Date();
         let data;
         jsonLoader.load(CONFIG_PATH, function (text) {
             try {
                 data = JSON.parse(text);
             } catch (error) {
-                console.error('AssetLoader: Can\'t parse ' + url + '.', error.message);
+                //console.error('AssetLoader: Can\'t parse ' + url + '.', error.message);
                 callback(null);
             }
             callback(data);
         });
-        console.log('loadConfig',new Date()-mytimeloadConfig);
+        //console.log('loadConfig',new Date()-mytimeloadConfig);
     }
 
     /*——加载资源——*/
     function loadAssetsList(assetsData) {
-        console.log('loadAssetsList');mytimeloadAssetsList=new Date();
+        //console.log('loadAssetsList');mytimeloadAssetsList=new Date();
 
         if( Object.keys( assetsData ).length == 0 ){
-           loadScene(); 
+           loadScene();
            return;
         }
 
         //根据资源配置计算资源总数
         for (var id in assetsData) progressTotal++;
         //根据资源配置加载资源
-        var i=1;for (var assetId in assetsData) assetsAdd(assetsData[assetId], onProgress,assetsData);//console.log(assetsData);
+        var i=1;for (var assetId in assetsData) assetsAdd(assetsData[assetId], onProgress,assetsData);////console.log(assetsData);
 
-        console.log('loadAssetsList',new Date()-mytimeloadAssetsList);
+        //console.log('loadAssetsList',new Date()-mytimeloadAssetsList);
     }
 
     function assetsAdd(asset, callback,assetsData) {
-        console.log('assetsAdd');mytimeassetsAdd=new Date();
+        //console.log('assetsAdd');mytimeassetsAdd=new Date();
 
         var assetJson = asset;
         let request = null;
@@ -91,7 +91,7 @@
             let data = {
                 id: assetJson.id,
                 filePath: assetJson.type !== "material" ? assetJson.file.url : assetJson.id + "Material.material"
-            };//console.log(assetJson.file.url,assetJson.file.path);//filePath: assetJson.type !== "material" ? assetJson.file.url : assetJson.id + "Material.material"
+            };////console.log(assetJson.file.url,assetJson.file.path);//filePath: assetJson.type !== "material" ? assetJson.file.url : assetJson.id + "Material.material"
             Web3DEngine.AssetManager.instance._handleNewAsset(event.content, data);
 
             if (callback)
@@ -101,18 +101,18 @@
         if (request != null) assetLoader.load(request);
         else if (callback) callback(asset);
 
-        console.log('assetsAdd',new Date()-mytimeassetsAdd);
+        //console.log('assetsAdd',new Date()-mytimeassetsAdd);
     }
 
     function onProgress(asset){
         progressCount++;
         if (progressCount === progressTotal)loadScene();
-        //if(progressCount==1)loadScene();console.log(progressCount);
+        //if(progressCount==1)loadScene();//console.log(progressCount);
     }
 
     /*——PC场景数据转化，场景读取——*/
     function loadScene(){
-        console.log('loadScene');mytime0=new Date();
+        //console.log('loadScene');mytime0=new Date();
         let pcSceneData;
         let firstScenePath = configData.scenes[0].url;
         jsonLoader.load(firstScenePath, function(text){
@@ -123,7 +123,7 @@
 
             let web3dScene = Web3DEngine.SceneManager.loadJson( sceneData );
 
-            if( web3dScene != null ){ 
+            if( web3dScene != null ){
                 //setTimeout(function(){
                     for(let i = 0 ; i < sceneData.render.post_process.overrides.Highlights.shadows.length ; ++i )
                         sceneData.render.post_process.overrides.Highlights.shadows[i] = sceneData.render.post_process.overrides.Highlights.shadows[i]/255;
@@ -136,5 +136,5 @@
                 //}, 0 );
             }
         });
-        console.log('loadScene',new Date()-mytime0);
+        //console.log('loadScene',new Date()-mytime0);
     }
