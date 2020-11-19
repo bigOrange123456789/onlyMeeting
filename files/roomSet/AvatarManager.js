@@ -8,12 +8,12 @@ function AvatarManager(){
     this.avatar4=null;
     this.loadNum=0;
     this.loadAvatar=function () {
-        //this.host();//this.loadGuest2();//this.loadGuest1();
-        //this.loadAvatarTool1(1,'avatar/Man01.glb');
         this.loadAvatarTool_test();
-        //this.loadAvatarTool1(2,'avatar/Female01.glb');
-        //this.loadAvatarTool1(3,'avatar/Ganpa01.glb');
-        // this.loadAvatarTool1(4,'avatar/Granny01.glb');
+        /*this.host();
+        this.loadAvatarTool1(1,'avatar/Man01.glb');
+        this.loadAvatarTool1(2,'avatar/Female01.glb');
+        this.loadAvatarTool1(3,'avatar/Ganpa01.glb');
+        this.loadAvatarTool1(4,'avatar/Granny01.glb');*/
     }
     this.loadAvatar2=function () {
         //alert(1)
@@ -85,46 +85,36 @@ function AvatarManager(){
             'avatar/Man01.glb',
             function (gltf) {//console.log(Web3DEngine.SceneManager.GetActiveScene()._imp.children);
 
-                var scene    =appInst._renderScenePass.scene;
-
-                /* var geo = new THREE.CubeGeometry(1,10,1);
-                 var mesh0=new THREE.Mesh(geo,material);
-                 scene.add(mesh0);*/
-
+                var scene=appInst._renderScenePass.scene;
                 var mesh=new Web3DEngine.Mesh;
                 mesh._originalAsset = gltf;
                 if(gltf.scene.transform._sceneRootGO)gltf.scene.transform._sceneRootGO.transform._removeChild(gltf.scene.transform);// 若存在于场景中，则移除
-                //console.log(mesh);
-                //console.log(mesh._imp.children[0].children[1].geometry);
-                //console.log(mesh._imp.children[0].children[1].geometry.attributes.position);//var vertices=geo.attributes.position.clone();
-
                 //开始进行实例化渲染
-                var instanceCount=1;
-                var igeo=new THREE.InstancedBufferGeometry();//geometry//threeJS中有一种对象叫InstancedMesh，构造方法为InstancedMesh( geometry : BufferGeometry, material : Material, count : Integer )
-                console.log(mesh);
-                var vertices=mesh._imp.children[0].children[1].geometry.attributes.position.clone();
-                igeo.addAttribute('position',vertices);
+                console.log(this);
+                console.log(loader);
+                console.log(gltf);
+                var material=new THREE.MeshStandardMaterial();//material.map=mesh[Meshid].material.map;
+                //var material=meshMat[0].clone();//InterleavedBufferAttribute
+                // var material=new THREE.MeshStandardMaterial();//material.map=mesh[Meshid].material.map;
+                material.map=new THREE.TextureLoader().load( 'myModel/dongshizhang5/Texture_0_0.jpeg' );
 
-                var mcol0,mcol1,mcol2,mcol3;
-                mcol0=mcol1=mcol2=mcol3=new THREE.InstancedBufferAttribute(
-                    new Float32Array(instanceCount * 3), 3
-                );
-                mcol0.setXYZ(0,1,0,0);//设置原始mesh的变换矩阵与名称
-                mcol1.setXYZ(0,0,1,0);//四元数、齐次坐标
-                mcol2.setXYZ(0,0,0,1);
-                mcol3.setXYZ(0,0,0,0);//这16个数字构成了一个 4*4 的矩阵
+                var mesh2=new THREE.InstancedMesh(geometry,material,3);
+                var dummy=new THREE.Object3D();
 
-                igeo.addAttribute('mcol0', mcol0);//四元数、齐次坐标
-                igeo.addAttribute('mcol1', mcol1);
-                igeo.addAttribute('mcol2', mcol2);
-                igeo.addAttribute('mcol3', mcol3);
+                dummy.position.set(10,-1,0);
+                dummy.updateMatrix();//由位置计算齐次坐标变换矩阵
+                mesh2.setMatrixAt(0, dummy.matrix);
 
-                var material=new THREE.MeshPhongMaterial({color:0x0000dd});
-                var mesh2=new THREE.Mesh(igeo,material);
+                dummy.position.set(0,-1,0);
+                dummy.updateMatrix();//由位置计算齐次坐标变换矩阵
+                mesh2.setMatrixAt(1, dummy.matrix);
+
+                dummy.position.set(-5,-10,0);
+                dummy.updateMatrix();
+                mesh2.setMatrixAt(2, dummy.matrix);
+
                 scene.add(mesh2);
                 //完成实例化渲染
-
-                ///////////////完成布置NPC/////////////
             }//loader.load
         );//完成加载模型
     }
