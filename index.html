@@ -19,11 +19,18 @@
     </script>
 </head>
 <body oncontextmenu="doNothing()">
-<script src="build/three.js"></script>
 <!--PM依赖开始-->
+<script src="pmLib/three0.js"></script>
+<script>
+    THREE0=THREE;
+</script>
 <script src="pmLib/MyPMLoader.js"></script>
 <script src="pmLib/PMAnimLoader.js"></script>
 <!--PM依赖完成-->
+
+<!--控制依赖开始-->
+<script src="build/OrbitControls.js"></script>
+<!--控制依赖完成-->
 
     <script src="files/roomSet/SpriteCard.js"></script>
     <script src="files/roomSet/LightManager.js"></script>

@@ -81,7 +81,7 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
             //console.log(new Web3DEngine.GameObject());
 
             var obj=new Web3DEngine.GameObject();
-            console.log(myModel2);//.children
+            //console.log(myModel2);//.children
             obj._imp.add(myModel2);
             obj.transform.localScale=new THREE.Vector3(1,1,1);
             obj.transform.position=new THREE.Vector3(0,0,0);
@@ -92,7 +92,7 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
             var obj3=Web3DEngine.GameObject.Instantiate(obj);//0000
             obj3.getComponent(Web3DEngine.Transform).localPosition=new THREE.Vector3(1,0,0);
 
-            console.log(obj2);
+            //console.log(obj2);
             //console.log(myModel2.child[0]);
             //完成新的PM
         }else if(this.f==3){
@@ -123,19 +123,19 @@ Web3DEngine.ExtendType( SceneSet , Web3DEngine.MonoBehaviour, {
                         var newChair=Web3DEngine.GameObject.Instantiate(firstChair);
                         newChair.getComponent(Web3DEngine.Transform).localPosition.set(-1.6-0.9*i,8.95+i*0.5,8.5-0.4*j-k*7.6);//前后、上下、左右
                         chairSave.push(newChair);
-                    }
+                    }//本周小结
             /*chairSave[1].getComponent(Web3DEngine.Transform).localScale
             =new THREE.Vector3(0.1,0.5,0.1);
             chairSave[0].getComponent(Web3DEngine.Transform).localPosition
                 =new THREE.Vector3(0,0,0);
                 //这里用到的应该不是真正的实例化渲染技术
                 */
-            console.log(chairSave[1].getComponent(Web3DEngine.Transform).localScale);
+            //console.log(chairSave[1].getComponent(Web3DEngine.Transform).localScale);
             //==========================================
             //==============添加人物================
-            for(var i=0;i<chairSave.length/10;i++)myAvatarManager.avatarType.push(randomNum(1,4));
+            for(var i=0;i<chairSave.length;i++)myAvatarManager.avatarType.push(randomNum(1,4));
             //====================================
-        }else if(this.f==70) myAvatarManager.loadAvatar();
+        }else if(this.f==180) myAvatarManager.loadAvatar();
 	    //else if(this.f==180)myAvatarManager.loadAvatar2();
 	    if(this.f<182)this.f++;
     },

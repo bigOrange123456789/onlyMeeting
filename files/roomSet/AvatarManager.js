@@ -8,12 +8,11 @@ function AvatarManager(){
     this.avatar4=null;
     this.loadNum=0;
     this.loadAvatar=function () {
-        //this.host();//this.loadGuest2();//this.loadGuest1();
-        //this.loadAvatarTool1(1,'avatar/Man01.glb');
-        this.loadAvatarTool_test();
-        //this.loadAvatarTool1(2,'avatar/Female01.glb');
-        //this.loadAvatarTool1(3,'avatar/Ganpa01.glb');
-        // this.loadAvatarTool1(4,'avatar/Granny01.glb');
+        this.host();//this.loadGuest2();//this.loadGuest1();
+        this.loadAvatarTool1(1,'avatar/Man01.glb');
+        this.loadAvatarTool1(2,'avatar/Female01.glb');
+        this.loadAvatarTool1(3,'avatar/Ganpa01.glb');
+        this.loadAvatarTool1(4,'avatar/Granny01.glb');
     }
     this.loadAvatar2=function () {
         //alert(1)
@@ -79,55 +78,6 @@ function AvatarManager(){
         mesh.name = oriName;
         sceneRoot.add(mesh);
     }
-    this.loadAvatarTool_test=function(){
-        var loader = new Web3DEngine._W3DGLTFLoader;
-        loader.load(
-            'avatar/Man01.glb',
-            function (gltf) {//console.log(Web3DEngine.SceneManager.GetActiveScene()._imp.children);
-
-                var scene    =appInst._renderScenePass.scene;
-
-                /* var geo = new THREE.CubeGeometry(1,10,1);
-                 var mesh0=new THREE.Mesh(geo,material);
-                 scene.add(mesh0);*/
-
-                var mesh=new Web3DEngine.Mesh;
-                mesh._originalAsset = gltf;
-                if(gltf.scene.transform._sceneRootGO)gltf.scene.transform._sceneRootGO.transform._removeChild(gltf.scene.transform);// 若存在于场景中，则移除
-                //console.log(mesh);
-                //console.log(mesh._imp.children[0].children[1].geometry);
-                //console.log(mesh._imp.children[0].children[1].geometry.attributes.position);//var vertices=geo.attributes.position.clone();
-
-                //开始进行实例化渲染
-                var instanceCount=1;
-                var igeo=new THREE.InstancedBufferGeometry();//geometry//threeJS中有一种对象叫InstancedMesh，构造方法为InstancedMesh( geometry : BufferGeometry, material : Material, count : Integer )
-                console.log(mesh);
-                var vertices=mesh._imp.children[0].children[1].geometry.attributes.position.clone();
-                igeo.addAttribute('position',vertices);
-
-                var mcol0,mcol1,mcol2,mcol3;
-                mcol0=mcol1=mcol2=mcol3=new THREE.InstancedBufferAttribute(
-                    new Float32Array(instanceCount * 3), 3
-                );
-                mcol0.setXYZ(0,1,0,0);//设置原始mesh的变换矩阵与名称
-                mcol1.setXYZ(0,0,1,0);//四元数、齐次坐标
-                mcol2.setXYZ(0,0,0,1);
-                mcol3.setXYZ(0,0,0,0);//这16个数字构成了一个 4*4 的矩阵
-
-                igeo.addAttribute('mcol0', mcol0);//四元数、齐次坐标
-                igeo.addAttribute('mcol1', mcol1);
-                igeo.addAttribute('mcol2', mcol2);
-                igeo.addAttribute('mcol3', mcol3);
-
-                var material=new THREE.MeshPhongMaterial({color:0x0000dd});
-                var mesh2=new THREE.Mesh(igeo,material);
-                scene.add(mesh2);
-                //完成实例化渲染
-
-                ///////////////完成布置NPC/////////////
-            }//loader.load
-        );//完成加载模型
-    }
     this.loadAvatarTool1=function (type,url) {
         var loader=new Web3DEngine._W3DGLTFLoader;
         //开始加载男性模型
@@ -141,13 +91,22 @@ function AvatarManager(){
                 if(gltf.scene.transform._sceneRootGO)gltf.scene.transform._sceneRootGO.transform._removeChild(gltf.scene.transform);// 若存在于场景中，则移除
                 if(type==1)myThis.avatar1=mesh;
 
-                for (var i = 0; i < thisAvatarType.length/2; i++)
+                var nowMan0 = new Web3DEngine.GameObject();
+                var SkinnedMeshRenderer = nowMan0.addComponent(Web3DEngine.SkinnedMeshRenderer);//为对象添加蒙皮渲染插件
+                nowMan0.addComponent(Web3DEngine.AnimationPlayer);
+                SkinnedMeshRenderer.mesh = mesh;
+
+                for (var i = 0; i < thisAvatarType.length; i++)
                     if (thisAvatarType[i] == type) {
-                        //setTimeout(function(){
-                        var nowMan = new Web3DEngine.GameObject();
+                        /*var nowMan = new Web3DEngine.GameObject();
                         var SkinnedMeshRenderer = nowMan.addComponent(Web3DEngine.SkinnedMeshRenderer);//为对象添加蒙皮渲染插件
                         nowMan.addComponent(Web3DEngine.AnimationPlayer);
-                        SkinnedMeshRenderer.mesh = mesh;//将模型赋值给蒙皮组件
+                        SkinnedMeshRenderer.mesh = mesh;*///将模型赋值给蒙皮组件
+
+                        console.log("XIN KUAI");
+                        var nowMan=Web3DEngine.GameObject.Instantiate(nowMan0);
+
+
                         ////////////////////////////
                         nowMan.getComponent(Web3DEngine.Transform).localScale = new THREE.Vector3(0.5, 0.5, 0.5);
                         nowMan.getComponent(Web3DEngine.Transform).localEulerAngles = new THREE.Vector3(0, 90, 0);
@@ -161,7 +120,6 @@ function AvatarManager(){
                                 node.material.side = 0;
                             }
                         })
-                        //},100);
                     }
                 ///////////////完成布置NPC/////////////
             }//loader.load

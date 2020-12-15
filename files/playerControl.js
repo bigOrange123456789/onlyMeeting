@@ -28,6 +28,10 @@ Web3DEngine.ExtendType( PlayerControl , Web3DEngine.MonoBehaviour, {
                         light.getComponent(Web3DEngine.Transform).localEulerAngles.y,
                         light.getComponent(Web3DEngine.Transform).localEulerAngles.z);
         if(this.f==0){
+            //var renderer=appInst._renderer;//var scene    =appInst._renderScenePass.scene;
+            //var camera =appInst._renderScenePass.camera;
+            //new OrbitControls(camera , renderer.domElement);
+
             appInst._renderScenePass.scene.background = new THREE.CubeTextureLoader()
                 .setPath( 'files/img/' )
                 .load( [

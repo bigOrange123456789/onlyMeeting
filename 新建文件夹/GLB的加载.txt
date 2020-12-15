@@ -1,0 +1,10 @@
+import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
+
+	var loader = new GLTFLoader();
+	loader.load('../Model/avatar/male_walk.glb', (gltf) => {
+		console.log(gltf.scene);
+		var obj=gltf.scene.children[0];
+		console.log(obj);
+		scene.add(obj);
+		obj.scale.set(100,1000,100);
+	})
